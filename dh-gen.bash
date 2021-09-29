@@ -11,3 +11,5 @@ do
 	rm candidates
 	(( SIZE = $SIZE + $ADD ))
 done
+mv /etc/ssh/moduli /etc/ssh/mod.back
+mv final /etc/ssh/moduli

@@ -18,5 +18,6 @@ do
 	rm candidates$SIZE
 	(( SIZE = $SIZE + $ADD ))
 done
+cd .. && rm -r temp
 mv /etc/ssh/moduli /etc/ssh/mod.back
 mv final /etc/ssh/moduli

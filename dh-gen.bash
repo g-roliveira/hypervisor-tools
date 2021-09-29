@@ -14,10 +14,10 @@ wait
 SIZE=2048
 while (( $SIZE <= $LIMIT ))
 do
-	ssh-keygen -M screen -f candidates$SIZE
+	ssh-keygen -M screen -f candidates$SIZE final
 	rm candidates$SIZE
 	(( SIZE = $SIZE + $ADD ))
 done
-cd .. && rm -r temp
 mv /etc/ssh/moduli /etc/ssh/mod.back
 mv final /etc/ssh/moduli
+cd .. && rm -r temp

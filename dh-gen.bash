@@ -17,6 +17,7 @@ do
 	ssh-keygen -M screen -f candidates$SIZE "$SIZE".f &
 	(( SIZE = $SIZE + $ADD ))
 done
+wait
 rm candidates*
 cat * > final
 mv /etc/ssh/moduli /etc/ssh/mod.back

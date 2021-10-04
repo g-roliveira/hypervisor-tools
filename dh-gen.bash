@@ -16,7 +16,6 @@ wait
 
 sleep 1
 SIZE=2048
-ITER=0
 
 while (( $SIZE <= $LIMIT ))
 do

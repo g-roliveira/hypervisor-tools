@@ -16,6 +16,7 @@ wait
 
 sleep 1
 SIZE=2048
+ITER=0
 
 while (( $SIZE <= $LIMIT ))
 do
@@ -25,7 +26,7 @@ done
 wait
 
 rm candidates*
-cat * > final
+cat $(ls -v) > final
 
 mv /etc/ssh/moduli /etc/ssh/mod.back
 mv final /etc/ssh/moduli

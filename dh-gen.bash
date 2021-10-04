@@ -1,26 +1,27 @@
 #!/bin/bash
 
-SIZE=2048
-ADD=1024
+SIZE=1024
+MULTI=2
 LIMIT=8192
 
 rm -r temp
 mkdir temp && cd temp
 
-while (( $SIZE <= $LIMIT ))
+while (( $SIZE * $MULTI <= $LIMIT ))
 do
 	ssh-keygen -M generate -O bits=$SIZE candidates$SIZE &
-	(( SIZE = $SIZE + $ADD ))
+	(( MULTI ++ ))
 done
 wait
 
 sleep 1
-SIZE=2048
+MULTI=2
 
-while (( $SIZE <= $LIMIT ))
+while (( $SIZE * $MULTI <= $LIMIT ))
 do
-	ssh-keygen -M screen -f candidates$SIZE "$SIZE".f &
-	(( SIZE = $SIZE + $ADD ))
+	ssh-keygen -M screen -f candidates$SIZE $MULTI_$SIZE.f &
+	(( MULTI ++ ))
+	
 done
 wait
 

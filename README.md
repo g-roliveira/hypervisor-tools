@@ -5,12 +5,12 @@
 wget https://raw.githubusercontent.com/HPPinata/OpenSSH-scripts/main/dh-gen.bash
 ```
 
-### keys
+### key-generation
 ```
 wget https://raw.githubusercontent.com/HPPinata/OpenSSH-scripts/main/ssh-keys.sh
 ```
 
-### key-default
+### default-key-generation
 ```
 wget https://raw.githubusercontent.com/HPPinata/OpenSSH-scripts/main/ssh-default-keys.sh
 ```

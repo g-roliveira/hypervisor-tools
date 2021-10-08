@@ -12,5 +12,5 @@ wget https://raw.githubusercontent.com/HPPinata/OpenSSH-scripts/main/ssh-keys.sh
 
 ### key-default
 ```
-wget https://raw.githubusercontent.com/HPPinata/OpenSSH-scripts/main/ssh-default-keys
+wget https://raw.githubusercontent.com/HPPinata/OpenSSH-scripts/main/ssh-default-keys.sh
 ```

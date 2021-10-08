@@ -1,5 +1,5 @@
 # OpenSSH-scripts
-## Useful scripts for key-generation and moduli generation
+## Useful scripts for Open-SSH key-generation and moduli generation
 ### moduli
 ```
 wget https://raw.githubusercontent.com/HPPinata/OpenSSH-scripts/main/dh-gen.bash

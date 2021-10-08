@@ -29,7 +29,7 @@ do
 done
 wait
 
-#remove files from first stage and create sorted, final file
+#remove files from first stage and create sorted, final output
 rm candidates*
 cat $(ls -v) > final
 

@@ -2,10 +2,9 @@
 
 #set minimum and maximum key size, as well as step size
 SIZE=2048
-ADD=1024
+STEP=1024
 LIMIT=8192
 
-#create and go to empty temporary directory
 rm -r temp
 mkdir temp && cd temp
 
@@ -13,7 +12,7 @@ mkdir temp && cd temp
 while (( $SIZE <= $LIMIT ))
 do
 	ssh-keygen -M generate -O bits=$SIZE candidates$SIZE &
-	(( SIZE = $SIZE + $ADD ))
+	(( SIZE = $SIZE + $STEP ))
 done
 wait
 
@@ -25,7 +24,7 @@ SIZE=2048
 while (( $SIZE <= $LIMIT ))
 do
 	ssh-keygen -M screen -f candidates$SIZE "$SIZE".f &
-	(( SIZE = $SIZE + $ADD ))
+	(( SIZE = $SIZE + $STEP ))
 done
 wait
 

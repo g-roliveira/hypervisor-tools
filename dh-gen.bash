@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #set minimum and maximum key size, as well as step size
-START=2048
-STEP=1024
-LIMIT=8192
+START="${1:-2048}"
+LIMIT="${2:-8192}"
+STEP="${3:-1024}"
 SIZE=$START
 
 rm -r temp && rm moduli && killall ssh-keygen

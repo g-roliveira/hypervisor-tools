@@ -1,9 +1,10 @@
 #!/bin/bash
 
 #set minimum and maximum key size, as well as step size
-SIZE=2048
+START=2048
 STEP=1024
 LIMIT=8192
+SIZE=$START
 
 rm -r temp
 mkdir temp && cd temp
@@ -18,7 +19,7 @@ wait
 
 #reset size to start value for second stage
 sleep 1
-SIZE=2048
+SIZE=$START
 
 #start second stage (validation), runs multiple sizes in parallel
 while (( $SIZE <= $LIMIT ))

@@ -6,7 +6,7 @@ STEP=1024
 LIMIT=8192
 SIZE=$START
 
-rm -r temp
+rm -r temp && rm moduli && killall ssh-keygen
 mkdir temp && cd temp
 
 #start first stage (generation), runs multiple sizes in parallel

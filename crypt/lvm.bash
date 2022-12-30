@@ -21,6 +21,6 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 shim-install
 
 exit
-pvresize /dev/sda2
+pvresize /dev/mapper/crypt_root
 lvresize -r -l +100%FREE system/root
 reboot

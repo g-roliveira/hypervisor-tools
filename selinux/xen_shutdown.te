@@ -1,10 +1,12 @@
 module shutdown 1.0;
 
 require {
+        type sysfs_t;
         type kernel_systemctl_t;
         type system_dbusd_t;
         type system_dbusd_var_run_t;
         type systemd_logind_t;
+        class file { open read getattr ioctl };
         class dbus send_msg;
         class unix_stream_socket connectto;
         class dir search;
@@ -12,6 +14,8 @@ require {
 }
 
 #============= kernel_systemctl_t ==============
+
+allow kernel_systemctl_t sysfs_t:file { open read getattr ioctl };
 
 allow kernel_systemctl_t system_dbusd_t:dbus send_msg;
 

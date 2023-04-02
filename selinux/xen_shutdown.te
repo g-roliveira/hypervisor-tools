@@ -1,4 +1,4 @@
-module shutdown 1.0;
+module xen_shutdown 1.0;
 
 require {
         type sysfs_t;

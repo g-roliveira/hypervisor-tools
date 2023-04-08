@@ -1,5 +1,5 @@
-zypper addrepo https://developer.download.nvidia.com/compute/cuda/repos/opensuse15/x86_64/cuda-opensuse15.repo
+zypper addrepo https://download.nvidia.com/opensuse/tumbleweed NVIDIA
 zypper refresh
-zypper install cuda
+zypper install nvidia-drivers-G06
 usermod -a -G video momi
 reboot

@@ -9,7 +9,6 @@ zypper rm -yu xen-tools-domU
 /mnt/Linux/install.sh -d sles -m 15 -n
 
 zypper in -y nano zram-generator
-systemctl enable docker
 
 cat <<'EOL' > /etc/systemd/zram-generator.conf
 [zram0]

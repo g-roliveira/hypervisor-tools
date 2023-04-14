@@ -8,6 +8,7 @@ mount /dev/sr0 /mnt
 zypper rm -yu xen-tools-domU
 /mnt/Linux/install.sh -d sles -m 15 -n
 
+zypper dup -y
 zypper in -y nano zram-generator
 
 cat <<'EOL' > /etc/systemd/zram-generator.conf

@@ -6,8 +6,8 @@ vfio_virqfd
 EOL
 cat /etc/modules-load.d/vfio.conf
 
-PCI=$(lspci -n -s 01:00 | awk -F ': ' {'print $2'})
-echo "options vfio-pci ids=$(echo $PCI | sed 's/ /,/g' disable_vga=1)" > /etc/modprobe.d/vfio.conf
+PCI=$(lspci -n -s 01:00 | awk -F ': ' {'print $2'} | awk -F ' ' {'print $1'})
+echo "options vfio-pci ids=$(echo $PCI | sed 's/ /,/g') disable_vga=1" > /etc/modprobe.d/vfio.conf
 cat /etc/modprobe.d/vfio.conf
 
 echo "blacklist amdgpu" >> /etc/modprobe.d/blacklist.conf

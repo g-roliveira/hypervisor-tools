@@ -20,6 +20,7 @@ sed -i -E 's/(GRUB_CMDLINE_LINUX_DEFAULT=".*)"/\1 video=efifb:off video=vesa:off
 cat /etc/default/grub
 
 echo "options kvm ignore_msrs=1 report_ignored_msrs=0" > /etc/modprobe.d/kvm.conf
+cat /etc/modprobe.d/kvm.conf
 
 update-initramfs -u -k all
 update-grub

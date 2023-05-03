@@ -16,7 +16,7 @@ echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf
 echo "blacklist nvidia" >> /etc/modprobe.d/blacklist.conf
 cat /etc/modprobe.d/blacklist.conf
 
-sed -i -E 's/(GRUB_CMDLINE_LINUX_DEFAULT=".*)"/\1 video=efifb:off video=vesa:off"/g' /etc/default/grub
+sed -i -E 's/(GRUB_CMDLINE_LINUX_DEFAULT=".*)"/\1 amd_iommu=on iommu=pt video=vesafb:off,efifb:off pcie_acs_override=downstream,multifunction"/g' /etc/default/grub
 cat /etc/default/grub
 
 echo "options kvm ignore_msrs=1 report_ignored_msrs=0" > /etc/modprobe.d/kvm.conf

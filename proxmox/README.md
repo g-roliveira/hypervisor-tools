@@ -8,7 +8,14 @@ chmod +x dhcp.bash
 cat dhcp.bash
 bash dhcp.bash
 ```
-Now reboot and select Non-Enterprise repo in webui
+
+## Community Repo
+```
+wget https://raw.githubusercontent.com/HPPinata/Notizen/main/proxmox/repo.bash
+chmod +x repo.bash
+cat repo.bash
+bash repo.bash
+```
 
 ## Disable Warning
 ```

@@ -9,6 +9,14 @@ cat dhcp.bash
 bash dhcp.bash
 ```
 
+## Setup KSM
+```
+wget https://raw.githubusercontent.com/HPPinata/Notizen/main/proxmox/ksm.bash
+chmod +x ksm.bash
+cat ksm.bash
+bash ksm.bash
+```
+
 ## Community Repo
 ```
 wget https://raw.githubusercontent.com/HPPinata/Notizen/main/proxmox/repo.bash

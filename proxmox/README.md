@@ -35,8 +35,8 @@ bash nosub.bash
 
 ## GPU Passthrough
 ```
-wget https://raw.githubusercontent.com/HPPinata/Notizen/main/proxmox/PCIe_pass.bash
-chmod +x PCIe_pass.bash
-cat PCIe_pass.bash
-bash PCIe_pass.bash
+wget https://raw.githubusercontent.com/HPPinata/Notizen/main/proxmox/pcie.bash
+chmod +x pcie.bash
+cat pcie.bash
+bash pcie.bash
 ```

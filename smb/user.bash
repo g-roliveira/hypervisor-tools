@@ -1,2 +1,4 @@
-sudo adduser --no-create-home --disabled-password --disabled-login user
-sudo smbpasswd -a user
+useradd -M momi
+smbpasswd -a momi
+mkdir /var/smbshare/mnt/net/desktop
+chown -R momi:momi /var/smbshare/mnt/net/desktop

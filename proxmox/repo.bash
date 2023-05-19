@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mv /etc/apt/sources.list.d/pve-enterprise.list /etc/apt/sources.list.d/pve-enterprise.list.bak
 
 cat <<'EOL' > /etc/apt/sources.list.d/pve-no-subscription.list

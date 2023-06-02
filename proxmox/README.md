@@ -3,6 +3,7 @@ Useful scriptlets for various Proxmox tweaks
 
 ## All scripts
 ```
+mkdir setup && cd setup
 list=( block dhcp font ksm trim repo nosub pcie )
 for i in ${list[@]}; do
   wget https://raw.githubusercontent.com/HPPinata/Notizen/main/proxmox/scripts/$i.bash
@@ -10,4 +11,6 @@ for i in ${list[@]}; do
   cat $i.bash
   bash $i.bash
 done
+cd ..
+reboot
 ```

@@ -1,7 +1,9 @@
+mkdir date
 find ./source -type f -print0 | xargs -0 mv -t ./date
 
-exiftool -vr "-FileCreateDate<CreateDate" ./date
-exiftool -vr "-FileModifyDate<CreateDate" ./date
+exiftool -r "-FileCreateDate<CreateDate" ./date
+exiftool -r "-FileModifyDate<CreateDate" ./date
 
-exiftool -vr -d %Y ./date
-exiftool -vr -d %m ./date
+mkdir sort
+cd sort
+exiftool -r "-Directory<CreateDate" -d %Y/%m ../date

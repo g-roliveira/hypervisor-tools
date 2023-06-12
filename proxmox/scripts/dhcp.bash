@@ -15,7 +15,8 @@ EOL
 )
 VAR=$(VAR=${VAR@Q}; echo "${VAR:2:-1}")
 
-sed -i "s+auto enp8s0++g" /etc/network/interfaces
 sed -i "s+iface enp8s0 inet dhcp+$VAR+g" /etc/network/interfaces
+sed -i "s+inet auto+inet dhcp+g" /etc/network/interfaces
+sed -i "s+inet6 auto+inet6 dhcp+g" /etc/network/interfaces
 
 cat /etc/network/interfaces

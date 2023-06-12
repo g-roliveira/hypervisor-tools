@@ -4,7 +4,7 @@ Useful scriptlets for various Proxmox tweaks
 ## All scripts
 ```
 mkdir setup && cd setup
-list=( block font ksm repo nosub pcie )
+list=( block cron dhcp font hosts ksm repo nosub pcie )
 for i in ${list[@]}; do
   wget https://raw.githubusercontent.com/HPPinata/Notizen/main/proxmox/scripts/$i.bash
   chmod +x $i.bash

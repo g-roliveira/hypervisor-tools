@@ -8,4 +8,5 @@ cat <<'EOL' > /etc/apt/sources.list.d/pve-no-subscription.list
 deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription
 EOL
 
+apt-key adv --fetch-keys https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg
 apt update && apt full-upgrade -y && apt autopurge -y

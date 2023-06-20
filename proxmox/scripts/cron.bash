@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cat <<'EOL' | crontab -
-@reboot bash /root/scripts/hosts.bash
+*/5 * * * * bash /root/scripts/hosts.bash
 EOL

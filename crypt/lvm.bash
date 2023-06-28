@@ -1,10 +1,10 @@
 #!/bin/bash
 
-lvresize -r -L -100M system/root
-pvresize --setphysicalvolumesize XXXX /dev/sda2 #at least 32M smaller than device to make space for the LUKS2 header. Over 50M difference recommended
+lvresize -r -L -1G system/root
+pvresize --setphysicalvolumesize XXXX /dev/sda2 #16+ MB smaller than device for LUKS2 header. Shrinking 100+ MB and growing after recommended
 vgchange -an
 
-cryptsetup reencrypt /dev/sda2 --encrypt --reduce-device-size 32M --pbkdf pbkdf2 #GRUB 2.06 only supports pbkdf2
+cryptsetup reencrypt /dev/sda2 --encrypt --reduce-device-size 16M --pbkdf pbkdf2 #GRUB 2.06 only supports pbkdf2
 cryptsetup open /dev/sda2 crypt_root
 vgchange -ay
 

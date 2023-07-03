@@ -21,8 +21,8 @@ reboot
 dd if=/dev/urandom of=/boot_keyfile bs=1 count=64
 chmod 0400 /boot_keyfile
 
-cryptsetup luksAddKey /dev/vda2 /boot_keyfile --pbkdf=pbkdf2
-cryptsetup luksDump /dev/vda2
+cryptsetup luksAddKey /dev/nvme0n1p5 /boot_keyfile --pbkdf=pbkdf2
+cryptsetup luksDump /dev/nvme0n1p5
 
 grub2-protect --action=add --protector=tpm2 --tpm2key --tpm2-keyfile=/boot_keyfile --tpm2-outfile=/boot/efi/EFI/opensuse/sealed_rootfs_key --tpm2-pcrs=0,2,7
 

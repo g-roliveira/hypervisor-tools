@@ -18,7 +18,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 shim-install
 reboot
 
-dd if=/dev/urandom of=/boot_keyfile bs=1 count=256
+dd if=/dev/urandom of=/boot_keyfile bs=1 count=64
 chmod 0400 /boot_keyfile
 
 cryptsetup luksAddKey /dev/vda2 /boot_keyfile --pbkdf=pbkdf2

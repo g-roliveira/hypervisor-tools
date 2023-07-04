@@ -3,7 +3,7 @@
 cat <<'EOL' > /etc/apt/sources.list.d/pbs-no-subscription.list
 # Proxmox Backup Server pbs-no-subscription repository provided by proxmox.com,
 # NOT recommended for production use
-deb http://download.proxmox.com/debian/pbs bullseye pbs-no-subscription
+deb http://download.proxmox.com/debian/pbs bookworm pbs-no-subscription
 EOL
 
 apt update && apt full-upgrade -y && apt autopurge -y

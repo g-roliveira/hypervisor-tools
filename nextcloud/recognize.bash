@@ -1,1 +1,1 @@
-docker exec -u www-data -it nextcloud-container php occ recognize:download-models
+docker exec -u www-data -it nextcloud php occ recognize:download-models

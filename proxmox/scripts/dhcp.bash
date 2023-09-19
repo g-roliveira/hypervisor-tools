@@ -1,20 +1,17 @@
 #!/bin/bash
 
 cp /etc/network/interfaces /etc/network/interfaces.bak
+sed -n '1h;1!H;${g;s/iface vmbr0.*10.1/iface vmbr0 inet dhcp/;p;}' /etc/network/interfaces.bak > /etc/network/interfaces
 
 VAR=$(cat <<'EOL'
 
 iface enp8s0 inet manual
 auto vmbr0
-
-iface vmbr0 inet static
-        address 192.168.8.40/24
-        gateway 192.168.8.1
+iface vmbr0 inet dhcp
         bridge-ports enp8s0
-        bridge-stp on
+        bridge-stp off
         bridge-fd 0
 
-iface vmbr0 inet6 auto
 EOL
 )
 

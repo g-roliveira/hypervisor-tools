@@ -8,6 +8,7 @@ VAR=$(cat <<'EOL'
 iface enp9s0 inet manual
 auto vmbr0
 iface vmbr0 inet dhcp
+        hwaddress ether DE:AD:2B:AD:00:99
         bridge-ports enp9s0
         bridge-stp off
         bridge-fd 0

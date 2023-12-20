@@ -4,7 +4,7 @@ Useful scriptlets for various Proxmox tweaks
 ## All scripts
 ```
 mkdir setup && cd setup
-list=( block btrfs cron dhcp font hosts ksm repo back nosub pcie )
+list=( btrfs font dhcp hosts cron repo back ksm fastdrive nosub pcie )
 for i in ${list[@]}; do
   curl -O https://raw.githubusercontent.com/HPPinata/Notizen/main/proxmox/scripts/$i.bash
   chmod +x $i.bash

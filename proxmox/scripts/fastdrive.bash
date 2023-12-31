@@ -21,7 +21,7 @@ fstrim -av
 btrfs subvolume create /mnt/fast/vms
 pvesm add btrfs fast-storage --path /mnt/fast/vms --content iso,vztmpl,images,rootdir
 
-{ crontab -l 2>/dev/null
+{ crontab -l 2> /dev/null
 cat <<'EOL'
 
 0 5 * * 0 btrfs balance start -musage=50 -dusage=50 /mnt/fast

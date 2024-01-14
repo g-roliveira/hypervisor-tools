@@ -10,7 +10,7 @@ done
 drive=( ${drive[@]/%/p1} )
 sleep 1
 
-mkfs.btrfs -f -L data -m raid1 -d raid1 ${drive[@]}
+mkfs.btrfs -f -L data -m raid1 -d raid0 ${drive[@]}
 
 mkdir /mnt/fast
 mount /dev/nvme0n1p1 /mnt/fast

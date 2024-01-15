@@ -1,5 +1,5 @@
-# zRam optimisation
-Useful scriptlets for configuring zram/zswap
+# zRam optimization
+A small service for setting up zswap variables
 
 ## Setup 
 ```

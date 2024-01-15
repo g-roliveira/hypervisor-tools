@@ -1,1 +1,1 @@
-touch /etc/systemd/zram-generator.conf
+:> /etc/systemd/zram-generator.conf

@@ -1,0 +1,10 @@
+[Unit]
+Description=Set zswap sysfs variables
+After=basic.target
+
+[Service]
+Type=oneshot
+ExecStart=bash -c '/opt/zswap/zswap.bash'
+
+[Install]
+WantedBy=multi-user.target

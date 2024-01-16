@@ -1,7 +1,19 @@
 # zRam optimization
 A small service for setting up zswap variables
 
-## Setup 
+## Tuned
+```
+dnf install -y tuned
+systemctl enable --now tuned
+
+mkdir /etc/tuned/zswap
+cd /etc/tuned/zswap
+curl -O https://raw.githubusercontent.com/HPPinata/Notizen/main/zram/tuned.conf
+
+tuned-adm profile zswap
+```
+
+## Systemd 
 ```
 mkdir /opt/zswap && cd /opt/zswap
 

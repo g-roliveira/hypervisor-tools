@@ -10,6 +10,7 @@ curl -O https://raw.githubusercontent.com/HPPinata/Notizen/main/zram/tuned.conf
 mkdir /etc/tuned/zswap
 mv tuned.conf /etc/tuned/zswap
 
+:> /etc/systemd/zram-generator.conf
 tuned-adm profile zswap
 ```
 

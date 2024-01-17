@@ -6,9 +6,9 @@ A small service for setting up zswap variables
 dnf install -y tuned
 systemctl enable --now tuned
 
-mkdir /etc/tuned/zswap
-cd /etc/tuned/zswap
 curl -O https://raw.githubusercontent.com/HPPinata/Notizen/main/zram/tuned.conf
+mkdir /etc/tuned/zswap
+mv tuned.conf /etc/tuned/zswap
 
 tuned-adm profile zswap
 ```

@@ -5,8 +5,12 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=bash -c 'ip6tables -t nat -A POSTROUTING -o eth1 -j MASQUERADE'
-ExecStop=bash -c 'ip6tables -t nat -D POSTROUTING -o eth1 -j MASQUERADE'
+ExecStart=bash -c 'ip6tables -t nat -A POSTROUTING -o eth1 -j MASQUERADE;\
+  curl -o /lib/systemd/system/NAT66.service https://raw.githubusercontent.com/HPPinata/Notizen/main/unifi/NAT66.service;\
+  systemctl enable NAT66'
+ExecStop=bash -c 'ip6tables -t nat -D POSTROUTING -o eth1 -j MASQUERADE;\
+  curl -o /lib/systemd/system/NAT66.service https://raw.githubusercontent.com/HPPinata/Notizen/main/unifi/NAT66.service;\
+  systemctl enable NAT66'
 RemainAfterExit=true
 
 [Install]

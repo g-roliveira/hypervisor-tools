@@ -6,7 +6,7 @@ After=network-online.target
 [Service]
 Type=oneshot
 ExecStart=bash -c 'ip6tables -t nat -A POSTROUTING -o eth1 -j MASQUERADE'
-ExecStart=bash -c 'ip6tables -t nat -D POSTROUTING -o eth1 -j MASQUERADE'
+ExecStop=bash -c 'ip6tables -t nat -D POSTROUTING -o eth1 -j MASQUERADE'
 RemainAfterExit=true
 
 [Install]

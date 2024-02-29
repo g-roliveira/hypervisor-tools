@@ -6,5 +6,6 @@ ForEach-Object {
   git pull
   git remote set-head origin -a
   git switch $(git rev-parse --abbrev-ref HEAD)
+  git remote prune origin
   cd ../
 }
